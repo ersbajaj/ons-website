@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ONS Engineering, Expediting & Inspection Services</title>
+<meta name="description" content="Engineering, expediting, inspection and package management for rotating and packaged equipment.">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A2540;
+    --navy-2:#123152;
+    --orange:#FF6B1B;
+    --orange-dark:#E05A0F;
+    --ink:#1B2734;
+    --gray-600:#5C6772;
+    --gray-100:#F4F5F7;
+    --gray-200:#E7E9EC;
+    --line:#DCDFE3;
+    --font-head:'Poppins', sans-serif;
+    --font-body:'Inter', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:#fff;
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.65;
+  }
+  h1,h2,h3,.brand-mark{font-family:var(--font-head);}
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  @media (max-width:640px){.wrap{padding:0 20px;}}
+  section{scroll-margin-top:88px;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:#fff;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .brand img{height:44px;width:auto;}
+  nav.links{display:flex;gap:32px;align-items:center;}
+  nav.links a{font-family:var(--font-head);font-size:15px;font-weight:500;text-decoration:none;color:var(--navy);
+    padding-bottom:3px;border-bottom:2px solid transparent;margin-right:32px;}
+  nav.links a:last-child{margin-right:0;}
+  nav.links a:hover{border-bottom-color:var(--orange);}
+  .cta-btn{
+    font-family:var(--font-head);font-weight:600;font-size:14px;
+    background:var(--orange);color:#fff;
+    padding:11px 24px;text-decoration:none;border-radius:4px;border:1px solid var(--orange);
+  }
+  .cta-btn:hover{background:var(--orange-dark);border-color:var(--orange-dark);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);padding:8px 14px;font-family:var(--font-head);border-radius:4px;}
+  @media (max-width:900px){
+    nav.links{display:none;}
+    .menu-toggle{display:block;}
+    .nav-row{position:relative;}
+    nav.links.open{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:66px;left:0;right:0;
+      background:#fff;border:1px solid var(--line);border-top:none;
+      padding:8px 24px 18px;
+    }
+    nav.links.open a{padding:12px 0;border-bottom:1px solid var(--line);width:100%;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--navy);
+    color:#fff;
+    padding:80px 0 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;position:relative;z-index:2;}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr;}}
+  .hero-eyebrow{font-size:14px;font-weight:600;color:var(--orange);letter-spacing:0.02em;margin:0 0 16px;}
+  .hero h1{font-size:44px;font-weight:600;line-height:1.2;margin:0 0 20px;max-width:600px;}
+  @media (max-width:640px){.hero h1{font-size:32px;}}
+  .hero p.lead{font-size:18px;color:#C7D2DE;max-width:500px;margin:0 0 32px;}
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-outline{
+    font-family:var(--font-head);font-weight:600;font-size:14px;
+    border:1px solid #fff;color:#fff;
+    padding:11px 24px;text-decoration:none;border-radius:4px;
+  }
+  .btn-outline:hover{background:#fff;color:var(--navy);}
+  .hero-badge-wrap{display:flex;justify-content:center;}
+  .hero-decor{width:100%;max-width:340px;opacity:0.95;}
+
+  /* ---------- quick links strip ---------- */
+  .quicklinks{background:var(--gray-100);border-bottom:1px solid var(--line);}
+  .ql-row{display:grid;grid-template-columns:repeat(4,1fr);}
+  @media (max-width:780px){.ql-row{grid-template-columns:repeat(2,1fr);}}
+  .ql-item{
+    display:flex;align-items:center;gap:12px;
+    padding:22px 24px;border-right:1px solid var(--line);
+    text-decoration:none;color:var(--navy);font-family:var(--font-head);font-weight:500;font-size:15px;
+  }
+  .ql-item:nth-child(4n){border-right:none;}
+  @media (max-width:780px){ .ql-item:nth-child(2n){border-right:none;} .ql-item{border-bottom:1px solid var(--line);} }
+  .ql-item:hover{background:var(--gray-200);}
+  .ql-icon{width:34px;height:34px;flex:none;margin-right:12px;}
+
+  /* ---------- section heads ---------- */
+  .section-head{max-width:640px;margin:0 0 44px;}
+  .section-head .kicker{color:var(--orange);font-family:var(--font-head);font-weight:600;font-size:14px;margin:0 0 10px;}
+  .section-head h2{font-size:32px;font-weight:600;margin:0 0 14px;color:var(--navy);}
+  .section-head p{color:var(--gray-600);font-size:17px;margin:0;}
+
+  /* ---------- services ---------- */
+  .services{padding:88px 0;}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  @media (max-width:780px){.svc-grid{grid-template-columns:1fr;}}
+  .svc-card{
+    border:1px solid var(--line);border-radius:6px;padding:32px;
+    transition:border-color 0.15s, box-shadow 0.15s;
+  }
+  .svc-card:hover{border-color:var(--orange);box-shadow:0 4px 18px rgba(10,37,64,0.08);}
+  .svc-icon{
+    width:52px;height:52px;border-radius:6px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .svc-icon svg{width:26px;height:26px;}
+  .svc-card h3{font-size:20px;font-weight:600;margin:0 0 10px;color:var(--navy);}
+  .svc-card .svc-intro{color:var(--gray-600);margin:0 0 16px;font-size:15px;}
+  .svc-card ul{margin:0;padding-left:20px;color:var(--ink);font-size:15px;}
+  .svc-card li{margin-bottom:7px;}
+
+  /* ---------- process ---------- */
+  .process{background:var(--gray-100);padding:88px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  @media (max-width:900px){.proc-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.proc-grid{grid-template-columns:1fr;}}
+  .proc-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px;}
+  .proc-num{font-family:var(--font-head);font-weight:700;font-size:26px;color:var(--orange);margin:0 0 12px;}
+  .proc-card h3{font-size:17px;font-weight:600;margin:0 0 8px;color:var(--navy);}
+  .proc-card p{margin:0;color:var(--gray-600);font-size:14.5px;}
+
+  /* ---------- about ---------- */
+  .about{padding:88px 0;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media (max-width:820px){.about-grid{grid-template-columns:1fr;}}
+  .about h2{font-size:32px;font-weight:600;margin:0 0 18px;color:var(--navy);}
+  .about p{color:var(--gray-600);font-size:17px;margin:0 0 16px;}
+  .about-points{list-style:none;margin:0;padding:0;}
+  .about-points li{
+    display:grid;grid-template-columns:44px 1fr;gap:16px;
+    padding:18px 0;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink);
+  }
+  .about-points li:last-child{border-bottom:1px solid var(--line);}
+  .about-points .num{
+    width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:600;font-size:14px;
+  }
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--navy);color:#fff;padding:88px 0;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media (max-width:820px){.contact-grid{grid-template-columns:1fr;}}
+  .contact h2{font-size:32px;font-weight:600;margin:0 0 14px;color:#fff;}
+  .contact p.lead{color:#C7D2DE;font-size:17px;max-width:440px;margin:0 0 32px;}
+  .contact-detail{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start;}
+  .contact-detail svg{width:20px;height:20px;flex:none;margin-top:3px;margin-right:14px;color:var(--orange);}
+  .contact-detail .k{font-size:12px;color:#9FB0C2;display:block;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.03em;}
+  .contact-detail .v{font-size:16px;color:#fff;}
+  form{background:#fff;border-radius:6px;padding:30px;color:var(--ink);}
+  form label{display:block;font-family:var(--font-head);font-size:13px;font-weight:500;margin:0 0 6px;color:var(--navy);}
+  form input,form textarea{
+    width:100%;font-family:var(--font-body);font-size:15px;
+    padding:11px 12px;border:1px solid var(--line);background:#fff;border-radius:4px;
+    margin-bottom:18px;color:var(--ink);
+  }
+  form textarea{resize:vertical;min-height:110px;}
+  form button{
+    font-family:var(--font-head);font-weight:600;font-size:14px;
+    background:var(--orange);color:#fff;border:1px solid var(--orange);border-radius:4px;
+    padding:12px 26px;cursor:pointer;
+  }
+  form button:hover{background:var(--orange-dark);border-color:var(--orange-dark);}
+  .form-note{font-size:12.5px;color:var(--gray-600);margin-top:12px;}
+
+  footer{background:#081D33;color:#9FB0C2;padding:40px 0;}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-brand{display:flex;align-items:center;gap:10px;background:#fff;padding:8px 14px;border-radius:6px;}
+  .foot-brand img{height:28px;}
+  .foot-brand span{font-family:var(--font-head);font-weight:600;color:#fff;font-size:15px;}
+  footer .fine{font-size:13px;}
+  footer a{text-decoration:none;}
+  footer a:hover{color:#fff;}
+
+  .reveal{opacity:0;transform:translateY(10px);animation:rise 0.7s ease forwards;}
+  @keyframes rise{to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#home" class="brand">
+      <img src="assets/logo.jpg" alt="ONS Engineering, Expediting & Inspection Services logo">
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="#contact" class="cta-btn">Request a quote</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <p class="hero-eyebrow">Rotating &amp; packaged equipment specialists</p>
+      <h1>Engineering, expediting and inspection, under one point of accountability.</h1>
+      <p class="lead">ONS Engineering, Expediting &amp; Inspection Services supports procurement and project teams through every stage of sourcing rotating and packaged equipment — from technical specification to inspection, delivery and installation.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="cta-btn">Talk to our team</a>
+        <a href="#services" class="btn-outline">See our services</a>
+      </div>
+    </div>
+    <div class="hero-badge-wrap reveal" style="animation-delay:0.15s;">
+      <svg class="hero-decor" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="150" r="140" fill="none" stroke="#3A5478" stroke-width="1.5"/>
+        <circle cx="150" cy="150" r="112" fill="none" stroke="#3A5478" stroke-width="1.5"/>
+        <path d="M95 150 Q150 90 205 150" fill="none" stroke="#FF6B1B" stroke-width="4" stroke-linecap="round"/>
+        <rect x="110" y="150" width="16" height="45" fill="#F4F5F7"/>
+        <rect x="142" y="130" width="16" height="65" fill="#F4F5F7"/>
+        <rect x="174" y="150" width="16" height="45" fill="#FF6B1B"/>
+        <line x1="95" y1="196" x2="205" y2="196" stroke="#F4F5F7" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="150" cy="46" r="4" fill="#FF6B1B"/>
+        <circle cx="254" cy="150" r="4" fill="#FF6B1B"/>
+        <circle cx="150" cy="254" r="4" fill="#FF6B1B"/>
+        <circle cx="46" cy="150" r="4" fill="#FF6B1B"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="quicklinks">
+  <div class="wrap ql-row">
+    <a class="ql-item" href="#services">
+      <svg class="ql-icon" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      Engineering
+    </a>
+    <a class="ql-item" href="#services">
+      <svg class="ql-icon" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Expediting
+    </a>
+    <a class="ql-item" href="#services">
+      <svg class="ql-icon" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      Inspection
+    </a>
+    <a class="ql-item" href="#services">
+      <svg class="ql-icon" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      Package management
+    </a>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">What we do</p>
+      <h2>Four disciplines, one point of accountability</h2>
+      <p>Each service stands on its own, or runs together as a single managed package across your order — from the first datasheet to installation on site.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3>Engineering for rotating &amp; packaged equipment</h3>
+        <p class="svc-intro">We support the technical decisions behind every purchase order, from equipment selection through to vendor sign-off.</p>
+        <ul>
+          <li>Selection of the correct type of equipment for the application</li>
+          <li>Preparation of mechanical datasheets</li>
+          <li>Development of material requisitions</li>
+          <li>Technical bid evaluation</li>
+          <li>Vendor document review</li>
+          <li>Purchase order follow-up through regular technical meetings with the vendor</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Expediting</h3>
+        <p class="svc-intro">We keep manufacturing and delivery schedules on track through direct, continuous contact with the vendor.</p>
+        <ul>
+          <li>Desk expediting, tracking progress and documentation from our offices</li>
+          <li>Field expediting at the manufacturing location, with engineers on the shop floor</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Inspection</h3>
+        <p class="svc-intro">We verify equipment quality and conformity at every stage of manufacture, against the codes that matter.</p>
+        <ul>
+          <li>Inspection of rotating and packaged equipment in accordance with applicable codes and standards, including API</li>
+          <li>Pre-inspection meetings</li>
+          <li>Factory acceptance tests</li>
+          <li>In-stage inspections throughout production</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <h3>Package management</h3>
+        <p class="svc-intro">We take ownership of the full order lifecycle, so nothing is lost at the handoffs between engineering, procurement and site.</p>
+        <ul>
+          <li>Complete package management from purchase order placement through to delivery</li>
+          <li>Coordination through to final installation on site</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="kicker">How we work</p>
+      <h2>How an order moves through ONS</h2>
+      <p>A typical engagement runs across four stages, though we're glad to join at any point in the process.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-card">
+        <p class="proc-num">01</p>
+        <h3>Specification &amp; bid evaluation</h3>
+        <p>Equipment selection, mechanical datasheets, material requisitions and technical bid evaluation set the baseline before a purchase order is placed.</p>
+      </div>
+      <div class="proc-card">
+        <p class="proc-num">02</p>
+        <h3>Vendor follow-up &amp; expediting</h3>
+        <p>Vendor document review and regular technical meetings track the purchase order, while desk and field expediting keep manufacturing on schedule.</p>
+      </div>
+      <div class="proc-card">
+        <p class="proc-num">03</p>
+        <h3>Inspection &amp; testing</h3>
+        <p>Pre-inspection meetings, in-stage inspection and factory acceptance tests confirm the equipment meets API and other applicable codes.</p>
+      </div>
+      <div class="proc-card">
+        <p class="proc-num">04</p>
+        <h3>Delivery &amp; installation</h3>
+        <p>Package management carries the order through shipment, delivery and installation, closing the loop from PO to plant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Why teams bring us in</h2>
+      <p>Sourcing rotating and packaged equipment touches engineering, procurement and quality all at once. Splitting that work across separate parties creates gaps at the handoffs — a vendor delay that goes unnoticed, or a datasheet detail that never reaches the inspector.</p>
+      <p>ONS keeps one team across the full order, so decisions made at the datasheet stage are still visible when equipment reaches factory acceptance testing.</p>
+    </div>
+    <ul class="about-points">
+      <li><span class="num">01</span><span>Technical bid evaluation and vendor document review handled by the same engineers who wrote the datasheet</span></li>
+      <li><span class="num">02</span><span>Field expediting at the manufacturing location, not just status calls from a desk</span></li>
+      <li><span class="num">03</span><span>Inspection against API and other applicable codes and standards, with pre-inspection meetings built in</span></li>
+      <li><span class="num">04</span><span>Package management that carries responsibility through to delivery and installation</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Start a conversation</h2>
+      <p class="lead">Tell us about the equipment you're sourcing and where you are in the process — we'll follow up to scope the right combination of services.</p>
+
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div><span class="k">Phone</span><span class="v">+31 6 4408 2350</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z" style="display:none"/><path d="M22 6c0-1.1-.9-2-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6z"/><polyline points="22 6 12 13 2 6"/></svg>
+        <div><span class="k">Email</span><span class="v">info@onsengineering.eu</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div><span class="k">Office</span><span class="v">Schuddebeursstraat 53, 2729LK Zoetermeer, The Netherlands</span></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <div><span class="k">Website</span><span class="v">www.onsengineering.eu</span></div>
+      </div>
+    </div>
+    <form action="mailto:info@onsengineering.eu" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="name@company.com" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Equipment type, project stage, and any deadlines" required></textarea>
+      <button type="submit">Send message</button>
+      <p class="form-note">This opens your email client addressed to info@onsengineering.eu.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-row">
+    <div class="foot-brand">
+      <img src="assets/logo.jpg" alt="ONS logo">
+    </div>
+    <div class="fine">
+      Schuddebeursstraat 53, 2729LK Zoetermeer, The Netherlands &nbsp;·&nbsp;
+      <a href="tel:+31644082350">+31 6 4408 2350</a> &nbsp;·&nbsp;
+      <a href="mailto:info@onsengineering.eu">info@onsengineering.eu</a>
+    </div>
+    <div class="fine">&copy; <span id="year"></span> ONS Engineering, Expediting &amp; Inspection Services</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var toggle = document.getElementById('menuToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ links.classList.remove('open'); });
+  });
+</script>
+
+</body>
+</html>
